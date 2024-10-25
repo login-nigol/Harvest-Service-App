@@ -7,11 +7,11 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "admins_info")
+@Table(name = "admins")
 public class AppAdmin {
 
     @Id
-    @Column(name = "admin_id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
