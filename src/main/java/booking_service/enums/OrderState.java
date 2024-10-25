@@ -5,6 +5,5 @@ public enum OrderState {
 
     ORDER_ACCEPTED,
     AWAITING_PAYMENT,
-    PAID,
-    UNPAID
+    PAID
 }
