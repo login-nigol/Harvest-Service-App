@@ -12,31 +12,27 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "orders_info")
+@Table(name = "orders")
 public class Order {
 
     @Id
-    @Column(name = "order_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long orderId;
 
-    private String title;
-    private LocalDateTime createdAt;
-    private BigDecimal bookingAmount;
-    private Long ticketId;
+    private String orderTitle;
+    private String orderInfo;
+    private LocalDateTime orderCreatedAt;
+    private BigDecimal orderAmount;
 
     @Enumerated(EnumType.STRING)
     private OrderState orderState;
 
-    @ManyToMany
-    @JoinTable(name = "orders_tickets", // промежуточная таблица
-            joinColumns = @JoinColumn(name = "order_id"), // внешний ключ таблицы order
-            inverseJoinColumns = @JoinColumn(name = "ticket_id")) // внешний ключ таблицы tickets
-    private List<Ticket> ticketList; // ссылается на Ticket
+    @OneToMany(mappedBy = "order")
+    private List<Ticket> ticketsList;
+
+    @OneToMany(mappedBy = "order")
+    private List<Payment> paymentList;
 
     @ManyToOne
     private AppUser appUser;
-
-    @OneToOne
-    private Payment payment;
 }

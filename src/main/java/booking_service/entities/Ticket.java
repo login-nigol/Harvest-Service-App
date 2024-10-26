@@ -9,24 +9,19 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "tickets_info")
+@Table(name = "tickets")
 public class Ticket {
 
     @Id
-    @Column(name = "ticket_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long ticketId;
 
-    private String title;
-    private String description;
-    private String imagePath;
-    private BigDecimal price;
-    private BigDecimal discount;
-    private Long orderId;
+    private String ticketTitle;
+    private String ticketDescription;
+    private String ticketImagePath;
+    private BigDecimal ticketPrice;
+    private BigDecimal ticketDiscount;
 
     @ManyToOne
-    private AppAdmin appAdmin; // поле связано с mappedBy="appadmin"
-
-    @ManyToMany(mappedBy = "ticketList")
-    private List<Order> orderList;
+    private Order order;
 }

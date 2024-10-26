@@ -11,5 +11,5 @@ import java.util.Optional;
 @Repository
 public interface AppUserRepository extends JpaRepository<AppUser, Long> {
     // кастомный метод
-    List<AppUser> findAllByEmail(String email);
+    List<AppUser> findAllByUserEmail(String email);
 }

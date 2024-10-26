@@ -10,4 +10,6 @@ public interface AppAdminService {
     AppUser create(AppUser appUser);
 
     List<AppUser> getAll();
+
+    AppUser update(AppUser appUser);
 }

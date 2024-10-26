@@ -8,27 +8,24 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "users_info")
+@Table(name = "users")
 public class AppUser {
 
     @Id
-    @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userId;
 
-    private String name;
-    private String surName;
-    private String email;
-    private String phone;
-    private String password;
-    private String role = "ROLE_USER";
+    private String userName;
+    private String userSurname;
+    private String userEmail;
+    private String userPhone;
+    private String userPassword;
+
+    private String userRole = "ROLE_USER";
 
     @ManyToOne
-    private AppAdmin appAdmin; // поле связано с mappedBy="appadmin"
+    private AppAdmin appAdmin;
 
-    @OneToMany
-    private List<Order> orderList;
-
-    @OneToMany
-    private List<Ticket> ticketList;
+    @OneToMany(mappedBy = "appUser")
+    private List<Order> ordersList;
 }

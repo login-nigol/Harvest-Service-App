@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/admin")
-@Tag(name = "Ticket Booking Service API", description = "Сервис бронирования билетов")
+@Tag(name = "Administrator controller", description = "Управление пользователями и билетами")
 public class AppUserController {
 
     private final AppAdminService userService;
@@ -32,4 +32,6 @@ public class AppUserController {
     public List<AppUser> getAll() {
         return userService.getAll();
     }
+
+
 }

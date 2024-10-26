@@ -3,8 +3,8 @@ package booking_service.services.admin_service;
 import booking_service.entities.AppUser;
 import booking_service.repositories.AppUserRepository;
 import booking_service.exeptions.errorMessage.ErrorMessage;
-
 import booking_service.services.admin_service.interfaces.AppAdminService;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class AppAdminServiceImpl implements AppAdminService {
     @Override
     public AppUser create(AppUser appUser) {
 
-        if (userRepository.findAllByEmail(appUser.getEmail()).isEmpty()) {
+        if (userRepository.findAllByUserEmail(appUser.getUserEmail()).isEmpty()) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, ErrorMessage.EMAIL_ALREADY_EXISTS);
         }
         return userRepository.save(appUser);
@@ -40,4 +40,32 @@ public class AppAdminServiceImpl implements AppAdminService {
         }
         return usersList;
     }
+
+    @Override
+    public AppUser update(AppUser appUser) {
+        AppUser foundUser = (AppUser) userRepository.findAllByUserEmail(appUser.getUserEmail());
+        if (foundUser == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, ErrorMessage.ID_NOT_FOUND);
+        }
+        return userRepository.save(foundUser);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

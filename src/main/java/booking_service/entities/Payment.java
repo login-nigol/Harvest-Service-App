@@ -1,24 +1,22 @@
 package booking_service.entities;
 
-import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
+
+import jakarta.persistence.*;
 
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "payment_info")
+@Table(name = "payment")
 public class Payment {
 
     @Id
-    @Column(name = "payment_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long paymentId;
 
-    private LocalDateTime createdAt;
-    private String orderStatus;
+    private LocalDateTime paymentCreatedAt;
 
-    @OneToOne
+    @ManyToOne
     private Order order;
 }

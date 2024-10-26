@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface AppAdminRepository extends JpaRepository<AppAdmin, Long> {
     // кастомный метод
-    List<AppAdmin> findByEmail(String email);
+    List<AppAdmin> findAppAdminByAdminEmail(String email);
 }
