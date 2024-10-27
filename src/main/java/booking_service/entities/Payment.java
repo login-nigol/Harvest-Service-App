@@ -8,13 +8,14 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "payment")
+@Table(name = "payments")
 public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long paymentId;
 
+    private String paymentInfo;
     private LocalDateTime paymentCreatedAt;
 
     @ManyToOne

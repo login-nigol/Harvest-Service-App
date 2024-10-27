@@ -8,8 +8,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "admins")
-public class AppAdmin {
+@Table(name = "administrators")
+public class Administrator {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +23,6 @@ public class AppAdmin {
 
     private String adminRole = "ROLE_ADMIN";
 
-    @OneToMany(mappedBy = "appAdmin")
-    private List<AppUser> usersList;
+    @OneToMany(mappedBy = "administrator")
+    private List<User> usersList;
 }

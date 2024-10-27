@@ -18,9 +18,10 @@ public class Ticket {
 
     private String ticketTitle;
     private String ticketDescription;
-    private String ticketImagePath;
     private BigDecimal ticketPrice;
     private BigDecimal ticketDiscount;
+
+    private String ticketImagePath;
 
     @ManyToOne
     private Order order;

@@ -34,5 +34,5 @@ public class Order {
     private List<Payment> paymentList;
 
     @ManyToOne
-    private AppUser appUser;
+    private User user;
 }
