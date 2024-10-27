@@ -58,4 +58,4 @@ CREATE TABLE "payments"
     "payment_info"       VARCHAR(255),
     "payment_created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-COMMENT ON TABLE "payments" IS 'Содержит данные о маршруте, стоимости.';
+COMMENT ON TABLE "payments" IS 'Содержит данные об оплате.';
