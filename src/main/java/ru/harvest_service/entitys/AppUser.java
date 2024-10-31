@@ -17,8 +17,8 @@ import java.util.Set;
 public class AppUser {
 
     @Id
-    @Column(name = "u_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "u_id")
     private Long userId;
 
     @Column(name = "u_name")
@@ -35,9 +35,9 @@ public class AppUser {
     private UserRole userRole;
 
     @JsonManagedReference
-    @JoinColumn(name = "foot_pr_id")
+    @JoinColumn(name = "foot_pr_id")        // ленивая       // состояние управления
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    private Set<Footproduct> footProducts;
+    private Set<Footproduct> footProducts; // уникальный список
 
     @JsonManagedReference
     @JoinColumn(name = "pr_cart_id")
