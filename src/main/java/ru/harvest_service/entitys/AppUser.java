@@ -34,8 +34,7 @@ public class AppUser {
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
-    @JsonManagedReference
-    @JoinColumn(name = "foot_pr_id")        // ленивая       // состояние управления
+    @JsonManagedReference               // ленивая       // состояние управления
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     private Set<Footproduct> footProducts; // уникальный список
 

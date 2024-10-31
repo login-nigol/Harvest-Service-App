@@ -7,6 +7,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -25,7 +27,7 @@ Footproduct {
     private String productDescription;
 
     @Column(name = "pr_price_id")
-    private String productPrice;
+    private BigDecimal productPrice;
 
     @JsonBackReference
     @JoinColumn(name = "user_id")

@@ -1,14 +1,14 @@
 package ru.harvest_service.entitys;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.NoArgsConstructor;
-import ru.harvest_service.entitys.enums.OrderPaymentStatus;
+
 
 import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
@@ -24,17 +24,12 @@ public class ProductCart {
     @Column(name = "pr_cart_info")
     private String productcartInfo;
 
-    @Column(name = "pr_cart_order_date")
-    private LocalDateTime productcartOrderDate;
 
     @Column(name = "pr_cart_order_amount")
-    private Integer productcartOrderAmount;
+    private Double productcartOrderAmount;
 
-    @Enumerated(EnumType.STRING)
-    private OrderPaymentStatus orderPaymentStatus;
-
-    @OneToOne
     @JsonBackReference
     @JoinColumn(name = "user_id")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     private AppUser user;
 }
