@@ -10,11 +10,15 @@
         <relativePath/>
     </parent>
 
-    <groupId>ru.vadim</groupId>
+    <groupId>ru</groupId>
     <artifactId>booking_service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>BookingService</name>
-    <description>Система онлайн-бронирования билетов.</description>
+    <name>Harvest Service</name>
+    <description>Rural fresh produce delivery service.</description>
+
+    <properties>
+        <java.version>22</java.version>
+    </properties>
 
     <dependencies>
         <!--                  Spring                    -->
@@ -33,7 +37,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-        <finalName>BookingService</finalName>
+        <finalName>Harvest Service</finalName>
     </build>
 
 </project>
