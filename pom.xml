@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>ru</groupId>
-    <artifactId>booking_service</artifactId>
+    <artifactId>harvest_service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Harvest Service</name>
     <description>Rural fresh produce delivery service.</description>
