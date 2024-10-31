@@ -14,6 +14,7 @@ import java.util.Set;
 @Data
 @Entity
 @NoArgsConstructor
+@Table(name = "app_users")
 public class AppUser {
 
     @Id
@@ -39,7 +40,6 @@ public class AppUser {
     private Set<Footproduct> footProducts; // уникальный список
 
     @JsonManagedReference
-    @JoinColumn(name = "pr_cart_id")
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     private ProductCart productCart;
 }

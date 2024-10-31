@@ -12,8 +12,8 @@ import java.math.BigDecimal;
 @Data
 @Entity
 @NoArgsConstructor
-public class
-Footproduct {
+@Table(name = "foot_products")
+public class Footproduct {
 
     @Id
     @Column(name = "foot_pr_id")
