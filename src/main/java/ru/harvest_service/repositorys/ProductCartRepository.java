@@ -1,15 +1,14 @@
 package ru.harvest_service.repositorys;
 
-import ru.harvest_service.entitys.ProductOrder;
+import ru.harvest_service.entitys.ProductCart;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-
 import java.util.List;
 
 @Repository
-public interface OrderRepository extends JpaRepository<ProductOrder, Long> {
+public interface ProductCartRepository extends JpaRepository<ProductCart, Long> {
 
-    List<ProductOrder> findAllById(Long id);
+    List<ProductCart> findAllByProductCartId(Long productId);
 }

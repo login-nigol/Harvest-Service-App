@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 @Repository
-public interface FootproductRepository extends JpaRepository<Footproduct, String> {
+public interface FootproductRepository extends JpaRepository<Footproduct, Long> {
 
-    List<Footproduct> findAllByFootproductTitle(String footproductTitle);
+    List<Footproduct> findAllByFootproductId(Long id);
 }

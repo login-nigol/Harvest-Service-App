@@ -67,7 +67,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>"Harvest Service</finalName>
+        <finalName>Harvest Service</finalName>
     </build>
 
 </project>
